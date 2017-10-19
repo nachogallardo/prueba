@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>formulario</title>
+<script type="text/javascript" src="js/validacion.js"/>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+
+  $.datepicker.regional['es'] = {
+		  closeText: 'Cerrar',
+		  prevText: '< Ant',
+		  nextText: 'Sig >',
+		  currentText: 'Hoy',
+		  monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+		  monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
+		  dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+		  dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
+		  dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
+		  weekHeader: 'Sm',
+		  dateFormat: 'dd/mm/yy',
+		  firstDay: 1,
+		  isRTL: false,
+		  showMonthAfterYear: false,
+		  yearSuffix: ''
+		  };
+		  $.datepicker.setDefaults($.datepicker.regional['es']);
+		 $(function () {
+		 $("#fecha").datepicker();
+		 });
+  </script>
+</head>
+<body>
+	<div id="contenedor">
+		<h1>Formulario</h1>
+		<div id="formu">
+			<form action="" method="get" name="nombreDelFormulario" onsubmit="return validarFormulario()">
+				<label for="nombre">Nombre:</label><input type="text" name="nombre" id="nombre" placeholder="nombre" autofocus="autofocus" onblur="validar(this)">			
+				<span id="spnombre" style="color:red"></span>
+				<br>
+				<label for="apellidos">Apellidos:</label>
+				<div id="dvapellidos">
+				<input type="text" name="apellidos" id="apellidos" placeholder="apellidos" onblur="validarOtro(this)">			
+				</div>
+				<br>
+				<label for="codigoPostal">Código Postal</label>
+				<input type="number" name="codigoPostal" id="codigoPostal" min="0" max="99999" required="required" pattern="[0-9]{5}">
+				<br>
+				<label for="ciudades">Ciudad</label>
+				<select id="ciudades" name="ciudades">
+					<option value="" selected="selected">Seleccione</option>
+					<option value="Sevilla" >Sevilla</option>
+					<option value="Huelva">Huelva</option>
+				</select>
+				<br>
+				<input type="radio" name="estado" id="estado" value="S" checked="chequed">Soltero
+				<input type="radio" name="estado" id="estado" value="C" >Casado
+				<br>
+				<input type="checkbox" name="futbol" id="futbol">Futbol
+                <br>
+                <label for="edad">Edad</label>				
+			    <input type="text" id="edad">
+			    <br>
+			    <label for="email">Email</label>
+			    <input type="email" name="email" id="email" onblur="validarEmail(this)">
+			    <br>
+			    <label for="desc">Descripcion</label>
+			    <textarea rows="5" cols="50" id="desc" name="desc" onkeypress="return limite(100)"/>
+				<br/>
+
+
+				<label for="fecha">fecha</label>
+				<input type="text" id="fecha">
+				
+				
+				<br>
+				<input type="submit" value="Enviar">
+			</form>		
+		</div>
+	</div>
+</body>
+</html>

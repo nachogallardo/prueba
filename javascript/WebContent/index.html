@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Inicio</title>
+<script type="text/javascript" src="js/codigo.js">
+</script>
+
+
+</head>
+<body>
+<p>Dado un textarea y un botón.Mostrar el número de vocales y cuantos son `a`,`e`...</p>
+<textarea rows="5" cols="25" id="textoVocales" name="textoVocales"></textarea>
+<input type="button" value="Calcular" onclick="comprobarVocales()">
+<span id="resultVocales"></span>
+
+	<table>
+		<thead>
+			<tr>
+				<th><input type="button" onclick="sumar()" value="Sumar"></th>
+				<th><input type="button" onclick="multiplicar()" value="Multiplicar"></th>
+				<th><input type="button" onclick="dividir()" value="Dividir"></th>
+				<th><input type="button" onclick="restar()" value="Restar"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><input type="button" onclick="pulsar(1)" value="1"></td>
+				<td><input type="button" onclick="pulsar(2)" value="2"></td>
+				<td><input type="button" onclick="pulsar(3)" value="3"></td>
+			</tr>
+			<tr>
+				<td><input type="button" onclick="pulsar(4)" value="4"></td>
+				<td><input type="button" onclick="pulsar(5)" value="5"></td>
+				<td><input type="button" onclick="pulsar(6)" value="6"></td>
+			</tr>
+			<tr>
+				<td><input type="button" onclick="pulsar(7)" value="7"></td>
+				<td><input type="button" onclick="pulsar(8)" value="8"></td>
+				<td><input type="button" onclick="pulsar(9)" value="9"></td>
+			</tr>
+			<tr>
+				<td><input type="button" onclick="pulsar(0)" value="0"></td>
+			</tr>
+		</tbody>
+	</table>
+
+
+	<p>Desarrolle una funcion que pregunte nuestro nombre y edad y muestre el resultado 
+	de los dias que hemos vivido hasta el momento</p>
+ 	<form action="#">
+		<label for="nombre">Nombre</label>
+		<input type="text" id="nombre" placeholder="nombre">
+		<br>
+		<br>
+		<label for="edad">Edad</label>
+		<input type="text" id="edad" placeholder="edad">
+		<br>
+		<br>
+		<button id="calcular" >Enviar</button>
+	</form>
+	<br><br>
+	<span id="result"></span>
+		<form action="#">
+		<label for="num1">Numero1</label>
+		<input type="text" id="num1" placeholder="Numero">
+		<br>
+		<br>
+		<label for="num2">Numero2</label>
+		<input type="text" id="num2" placeholder="numero">
+		<br>
+		<br>
+		<button id="mayor" >Enviar</button>
+	</form>
+	<br><br>
+	<span id="resultado"></span>
+	
+	
+	<form action="#" name="fraseRep">
+		<label for="frase">Frase</label>
+		<input type="text" id="frase" placeholder="Frase">
+		<br>
+		<br>
+		<label for="num">Numero</label>
+		<input type="text" id="num" placeholder="numero">
+		<br>
+		<br>
+		<button onclick="RepiteFrase(document.fraseRep.frase.value,document.fraseRep.num.value)" >Enviar</button>
+	</form>
+	<br><br>
+	<span id="mensaje"></span>
+	
+	
+	<form action="#" name="numeros">
+		<label for="numR">Número</label>
+		<input type="number" id="numR" onfocus="this.select()" placeholder="Número: " max="9999" min="1">
+		<br>
+		<br>
+		<button onclick="calcularRepetido(document.numeros.numR.value)"  id="calcularRep" >Enviar</button>
+		<button onclick="reiniciarRepetido()" id="reiniciar")>Reiniciar</button>
+	</form>
+	<br><br>
+	<span id="resultadoRep"></span>
+	
+	
+	
+<!-- 	<form action="#" name="factorial"> -->
+<!-- 		<label for="num">Numero</label> -->
+<!-- 		<input type="text" id="num" placeholder="numero"> -->
+<!-- 		<br> -->
+<!-- 		<br> -->
+<!-- 		<button onclick="muestraFac(document.factorial.num.value)" >Enviar</button> -->
+<!-- 	</form> -->
+<!-- 	<br><br> -->
+<!-- 	<span id="men"></span> -->
+	
+	
+	<form action="#" name="elevar">
+		<label for="a">A</label>
+		<input type="number" id="a" placeholder="numero">
+		<br>
+		<br>
+		<label for="b">B</label>
+		<input type="number" id="b" placeholder="numero">
+		<br>
+		<br>
+		<button onclick="elevado(document.elevar.a.value,document.elevar.b.value)" >Enviar</button>
+	</form>
+	<br><br>
+	<span id="res"></span>
+	<form action="#" name="aciertas">
+		<label for="c">Numero</label>
+		<input type="number" id="c" placeholder="numero">
+		<br>
+		<br>
+		<button onclick="acierta(document.aciertas.c.value)" >Enviar</button>
+	</form>
+	<br><br>
+	<span id="prueba"></span>
+	
+	<form action="#" name="multiplos">
+		<label for="multiplo">Numero</label>
+		<input type="number" id="multiplo" placeholder="Múltiplo">
+		<br>
+		<br>
+		<button onclick="multiplosDe(document.multiplos.multiplo.value)" >Enviar</button>
+	</form>
+	<br><br>
+	<span id="todosMultiplos"></span>
+	
+	
+	
+	    <label for="tablas">Tabla del: </label>
+		<input type="number" id="tablas" placeholder="número">
+		<br>
+		<br>
+		<input type="button" value="" onclick="tablaDel()" >
+	
+	<br><br>
+	<span id="tabla"></span>
+
+	
+	<label for=primos>Es primo: </label>
+	<input type="number" id="primos" placeholder="número">
+	<br>
+	<br>
+	<input type="button" value="" onclick=comprobarPrimo() >
+	<span id="esPrimo"></span>
+	
+
+	
+	<script>
+		document.getElementById("calcular").addEventListener("click",calcular);
+		document.getElementById("mayor").addEventListener("click",cualEs);
+	</script>
+	
+</body>
+</html>
